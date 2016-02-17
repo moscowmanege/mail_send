@@ -19,8 +19,13 @@ gulp.task('jade', function() {
 		.pipe(gulp.dest('build'));
 });
 
+gulp.task('images', function(){
+	return gulp.src(['src/img/**', 'src/mails/**/*.{jpg,png}'])
+		.pipe(gulp.dest('build'));
+});
+
 gulp.task('clean:before', function(callback) {
-	return del(['build/**', '!build', '!build/.gitignore'], callback);
+	return del('build', callback);
 });
 
 gulp.task('clean:after', function(callback) {
@@ -28,5 +33,5 @@ gulp.task('clean:after', function(callback) {
 });
 
 gulp.task('default', function(callback) {
-	runSequence('clean:before', 'stylus', 'jade', 'clean:after', callback);
+	runSequence('clean:before', ['stylus', 'images'], 'jade', 'clean:after', callback);
 });

@@ -1,4 +1,5 @@
 extends ../../layout.jade
+include ../../blocks.jade
 
 block styles
 	include styles.css
@@ -6,3 +7,4 @@ block styles
 block content
 	h2 Я письмо раз
 	a(href='#') я ссылка
+	+simple(10)
