@@ -9,4 +9,8 @@ mixin category(title, value, addon)
 	tr
 		td(class= title && 'category')= title && title + ':'
 		td.val!= value
-		td.addon= addon
+		td.addon!= addon
+
+mixin spacer(numb)
+	each space in new Array(numb || 1)
+		tr.spacer
