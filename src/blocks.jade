@@ -1,9 +1,9 @@
 - var up = function(val) { return '<sup>' + val + '</sup>'; }
 
 mixin title(title, desc)
-	tr.title(class=attributes.style)
-		td= title
-		td(colspan='2')= desc
+	tr.title(class=attributes.style, class=attributes.bold)
+		td.head= title
+		td.desc(colspan='2')= desc
 
 mixin category(title, value, addon)
 	tr
