@@ -7,6 +7,6 @@ mixin title(title, desc)
 
 mixin category(title, value, addon)
 	tr
-		td.category= title + ':'
+		td(class= title && 'category')= title && title + ':'
 		td.val!= value
 		td.addon= addon
