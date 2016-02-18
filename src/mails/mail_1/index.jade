@@ -1,56 +1,49 @@
 extends ../../layout.jade
-include ../../blocks.jade
 
 block styles
 	include styles.css
 
 block content
-	table(border='0', cellpadding='0', cellspacing='0', style='margin:0; padding:0')
-		tr.title.h1
-			td Заголовок раздела
-			td(colspan='2') пояснение для заголовка
+	+title('Заголовок раздела', 'пояснение для заголовка')(style='h1')
 
-		tr
-			td.category Метраж:
-			td.val
-				| 1800м
-				sup 2
-			td.addon дополнение
+	+category('Метраж', '1800м' + up(2), 'дополнение')
 
-		tr.spacer
 
-		tr
-			td.category Метраж:
-			td.val 2100мм
-			td.addon до ферм
-		tr
-			td
-			td.val 3400мм
-			td.addon до навесного потолка
-		tr
-			td
-			td.val 5100мм
-			td.addon дополнение
 
-		tr.title.h2
-			td Маленький заголовок подраздела
-			td(colspan='2') пояснение для заголовка
+	tr.spacer
 
-		tr
-			td.category Метраж 1:
-			td.val
-				| 1800м
-				sup 2
-			td.addon дополнение
-		tr
-			td.category Метраж 2:
-			td.val
-				| 1800м
-				sup 2
-			td.addon дополнение
-		tr
-			td.category Метраж 3 длинный:
-			td.val
-				| 1800м
-				sup 2
-			td.addon дополнение
+	tr
+		td.category Метраж:
+		td.val 2100мм
+		td.addon до ферм
+	tr
+		td
+		td.val 3400мм
+		td.addon до навесного потолка
+	tr
+		td
+		td.val 5100мм
+		td.addon дополнение
+
+	tr.title.h2
+		td Маленький заголовок подраздела
+		td(colspan='2') пояснение для заголовка
+
+	tr
+		td.category Метраж 1:
+		td.val
+			| 1800м
+			sup 2
+		td.addon дополнение
+	tr
+		td.category Метраж 2:
+		td.val
+			| 1800м
+			sup 2
+		td.addon дополнение
+	tr
+		td.category Метраж 3 длинный:
+		td.val
+			| 1800м
+			sup 2
+		td.addon дополнение

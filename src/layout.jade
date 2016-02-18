@@ -1,3 +1,5 @@
+include blocks.jade
+
 html
 	head
 		meta(content='text/html; charset=utf-8', http-equiv='Content-Type')
@@ -9,7 +11,8 @@ html
 			h1 Я шапка комерческого предложения МАНЕЖА
 		.content_block
 			center
-				block content
+				table(border='0', cellpadding='0', cellspacing='0')
+					block content
 		.footer_block
 			hr
 			h2 я красивый футер
