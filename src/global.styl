@@ -1,16 +1,27 @@
 body
 	margin 0
-	padding 15px
+	padding 0
 
 table
 	margin 0
 	padding 0
 	font-family Arial
 	td
+		padding-top 15px
 		vertical-align top
+	.line td
+		padding-top 30px
+		width 100%
+		border-bottom 4px solid black
+	.image
+		img
+			width 100%
+			display block
 
 .header_block
 	width 640px
+	td
+		padding-top 0
 	.logo
 		width 120px
 	.h1
@@ -24,8 +35,6 @@ table
 .content_block
 	// background-color green
 	width 640px
-	td
-		padding-top 15px
 	.title
 		&.h1
 			font-size 16pt
@@ -38,9 +47,6 @@ table
 				font-weight bold
 	.spacer
 		height 20px
-	.line
-		width 100%
-		border-bottom 4px solid black
 	.category
 		width 320px
 		border-bottom 1px solid black
@@ -55,5 +61,4 @@ table
 .footer_block
 	width 640px
 	td
-		padding-top 15px
 		vertical-align bottom

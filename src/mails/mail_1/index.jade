@@ -4,7 +4,6 @@ block styles
 	include styles.css
 
 block content
-	+line()
 	+title('Заголовок раздела', 'Пояснение для заголовка')(style='h1', bold='desc')
 
 	+category('Метраж', '1800м' + up(2), 'дополнение')
@@ -24,3 +23,8 @@ block content
 	+category('Метраж 1', '1800м' + up(2), 'до потолка')
 	+category('Метраж 2', '5400мм', 'до ферм')
 	+category('Метраж 3 длинный', '3200м' + up(2), 'до пола')
+
+	+line()
+	+image('Я красивая картинка', 'img/01.jpg')
+	+line()
+	+image('Я еще картинка', 'img/01.jpg')

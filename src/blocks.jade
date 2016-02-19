@@ -11,9 +11,16 @@ mixin category(title, value, addon)
 		td.val!= value
 		td.addon!= addon
 
+mixin image(title, path)
+	tr
+		td= title
+	tr.image
+		td(colspan='3'): img(src=path)
+
+
 mixin spacer(numb)
 	each space in new Array(numb || 1)
 		tr.spacer
 
 mixin line()
-	tr: td.line(colspan='3')
+	tr.line: td(colspan='3')
