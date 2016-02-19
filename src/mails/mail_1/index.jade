@@ -4,6 +4,7 @@ block styles
 	include styles.css
 
 block content
+	+line()
 	+title('Заголовок раздела', 'Пояснение для заголовка')(style='h1', bold='desc')
 
 	+category('Метраж', '1800м' + up(2), 'дополнение')
@@ -11,7 +12,7 @@ block content
 	+spacer()
 
 	+category('Метраж', '2100мм', 'до ферм')
-	+category(null, '3400мм', 'до навесного потолка')
+	+category(null, '340мм', 'до навесного потолка')
 	+category(null, '5100мм', 'дополнение')
 
 	+spacer()

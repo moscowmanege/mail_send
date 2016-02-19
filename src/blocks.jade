@@ -14,3 +14,6 @@ mixin category(title, value, addon)
 mixin spacer(numb)
 	each space in new Array(numb || 1)
 		tr.spacer
+
+mixin line()
+	tr: td.line(colspan='3')

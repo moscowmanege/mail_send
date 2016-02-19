@@ -1,39 +1,59 @@
+body
+	margin 0
+	padding 15px
+
 table
-  margin 0
-  padding 0
-  font-family Arial
-  width 650px
-  td
-    padding-top 15px
-    vertical-align top
+	margin 0
+	padding 0
+	font-family Arial
+	td
+		vertical-align top
 
 .header_block
-  .logo
-    width 120px
+	width 640px
+	.logo
+		width 120px
+	.h1
+		font-size 16pt
+		font-weight bold
+	.h2
+		font-size 12pt
+		line-height 16pt
+
 
 .content_block
-  .title
-    &.h1
-      font-size 18pt
-    &.h2
-      font-size 12pt
-      font-weight bold
-    &.head td.head
-        font-weight bold
-    &.desc td.desc
-        font-weight bold
+	// background-color green
+	width 640px
+	td
+		padding-top 15px
+	.title
+		&.h1
+			font-size 16pt
+		&.h2
+			font-size 12pt
+			font-weight bold
+		&.head td.head
+				font-weight bold
+		&.desc td.desc
+				font-weight bold
+	.spacer
+		height 20px
+	.line
+		width 100%
+		border-bottom 4px solid black
+	.category
+		width 320px
+		border-bottom 1px solid black
+	.val
+		border-bottom 1px solid black
+		display inline-block
+		font-weight bold
+	.addon
+		padding-left 15px
 
-  .spacer
-    height 20px
 
-  .category
-    width 280px
-    border-bottom 1px solid black
-
-  .val
-    border-bottom 1px solid black
-    display inline-block
-    font-weight bold
-
-  .addon
-    padding-left 20px
+.footer_block
+	width 640px
+	td
+		padding-top 15px
+		vertical-align bottom

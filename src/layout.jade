@@ -9,28 +9,44 @@ html
 			include global.css
 			block styles
 	body
-		center
-			table.header_block(border='0', cellpadding='0', cellspacing='0')
-				tr
-					td КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ
-					td(rowspan='2'): img.logo(src='../logo.png')
-				tr
-					td На аренду площадки в «МВО «Манеж»
-		center
-			table.content_block(border='0', cellpadding='0', cellspacing='0')
-				block content
-		center
-			table.footer_block(border='0', cellpadding='0', cellspacing='0')
-				tr
-					td
-					td Стоимость аренды помещения зависит от формата Вашего мероприятия.
-				tr
-					td(colspan='2') Внимание: для закрепления помещения за вами необходимо заключить договор. Будем признательны, если вы оперативно сообщите о своем решении.
-				tr
-					td
-						| По возникшим вопросам
-						| Вы можете обратиться по почте:
-					td: a(href='mailto:u.komshina@moscowmanege.ru') u.komshina@moscowmanege.ru
-				tr
-					td и по телефону:
-					td +7 (903) 722-47-76
+		table(width='100%', border='0', cellspacing='0', cellpadding='0')
+			tr
+				td(align='center')
+
+
+					//- Header block
+
+
+					table.header_block(border='0', cellpadding='0', cellspacing='0')
+						tr
+							td.h1 КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ
+							td(rowspan='2', align='right'): img.logo(src='../logo.png')
+						tr
+							td.h2 На аренду площадки в «МВО «Манеж»
+
+
+					//- Content block
+
+
+					table.content_block(border='0', cellpadding='0', cellspacing='0')
+						block content
+
+
+					//- Footer block
+
+
+					table.footer_block(border='0', cellpadding='0', cellspacing='0')
+						tr
+							td
+							td Стоимость аренды помещения зависит от формата Вашего мероприятия.
+						tr
+							td(colspan='2') Внимание: для закрепления помещения за вами необходимо заключить договор. Будем признательны, если вы оперативно сообщите о своем решении.
+						tr
+							td
+								| По возникшим вопросам
+								br
+								| Вы можете обратиться по почте:
+							td: a(href='mailto:u.komshina@moscowmanege.ru') u.komshina@moscowmanege.ru
+						tr
+							td и по телефону:
+							td +7 (903) 722-47-76
