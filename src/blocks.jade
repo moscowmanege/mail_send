@@ -8,12 +8,12 @@ mixin title(title, desc)
 mixin category(title, value, addon)
 	tr
 		td(class= title && 'category')= title && title + ':'
-		td.val!= value
+		td.val: span!= value
 		td.addon!= addon
 
 mixin image(title, path)
 	tr.image_desc
-		td= title
+		td: span= title
 	tr.image
 		td(colspan='3'): img(src=path, alt=title)
 	tr.image_alt
