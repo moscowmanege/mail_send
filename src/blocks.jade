@@ -15,7 +15,9 @@ mixin image(title, path)
 	tr.image_desc
 		td= title
 	tr.image
-		td(colspan='3'): img(src=path)
+		td(colspan='3'): img(src=path, alt=title)
+	tr.image_alt
+		td(colspan='3') ## место для картинки ##
 
 
 mixin spacer(numb)
