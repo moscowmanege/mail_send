@@ -12,7 +12,7 @@ mixin category(title, value, addon)
 		td.addon!= addon
 
 mixin image(title, path)
-	tr
+	tr.image_desc
 		td= title
 	tr.image
 		td(colspan='3'): img(src=path)
