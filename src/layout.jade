@@ -23,7 +23,7 @@ html
 							td(rowspan='2', align='right'): img.logo(src='../logo.png')
 						tr
 							td.h2 На аренду площадки в «МВО «Манеж»
-						tr.line: td(colspan='3')
+						+line()
 
 
 					//- Content block
@@ -37,7 +37,7 @@ html
 
 
 					table.footer_block(border='0', cellpadding='0', cellspacing='0')
-						tr.line: td(colspan='3')
+						+line()
 						tr
 							td
 							td Стоимость аренды помещения зависит от формата Вашего мероприятия.
@@ -52,4 +52,4 @@ html
 						tr
 							td и по телефону:
 							td: a(href='tel:+7 (903) 722-47-76') +7 (903) 722-47-76
-						tr.line: td(colspan='3')
+						+line()
