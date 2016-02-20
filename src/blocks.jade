@@ -1,11 +1,15 @@
 - var sup = function(val) { return '<sup>' + val + '</sup>'; }
 - var br = function(numb) { return Array.apply(null, Array(numb || 1)).map(function() { return '<br>' }).join(''); }
 
+
 mixin title(title, desc)
-	tr.title(class=attributes.style, class=attributes.bold)
+	- var style = attributes.style || 'h1'
+	- var bold = attributes.bold || 'head'
+	tr.title(class=style, class=bold)
 		td.head(colspan= !desc ? '3': '')= title
 		if desc
 			td.desc(colspan='2')= desc
+
 
 mixin category(title, value, addon)
 	tr
@@ -13,6 +17,7 @@ mixin category(title, value, addon)
 		td.val(colspan= !addon ? '2': ''): span!= value
 		if addon
 			td.addon!= addon
+
 
 mixin image(title, path)
 	tr.image_desc
@@ -28,6 +33,7 @@ mixin image(title, path)
 mixin spacer(numb)
 	each space in new Array(numb || 1)
 		tr.spacer
+
 
 mixin line()
 	tr.line: td(colspan='3'): hr(size='4', color='black')
