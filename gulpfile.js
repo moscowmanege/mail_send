@@ -9,7 +9,14 @@ var gulp = require('gulp'),
 		stylus = require('gulp-stylus');
 
 
+// vars Block
+
+
+var Production = false;
+
+
 // Loggers Block
+
 
 var error_logger = function(error) {
 	console.log([
@@ -28,6 +35,7 @@ var watch_logger = function(event) {
 	console.log('File ' + event.path.green + ' was ' + event.type.yellow + ', running tasks...');
 }
 
+
 // Tasks Block
 
 
@@ -41,7 +49,7 @@ gulp.task('stylus', function(){
 gulp.task('jade', function() {
 	return gulp.src('src/mails/**/*.jade')
 		.pipe(plumber(error_logger))
-		.pipe(jade({pretty: true}))
+		.pipe(jade({pretty: !Production, locals: { production: Production }}))
 		.pipe(juice())
 		.pipe(gulp.dest('build'));
 });
@@ -59,12 +67,23 @@ gulp.task('clean:after', function(callback) {
 	return del('src/**/*.css', callback);
 });
 
-gulp.task('watch', function() {
-	gulp.watch(['src/**', '!src', '!src/*.css'], ['default']).on('change', watch_logger);
+gulp.task('production', function(callback) {
+	Production = true;
+	callback();
 });
 
 
+// Run Block
+
+
+gulp.task('dev', function() {
+	gulp.watch(['src/**', '!src', '!src/*.css'], ['default']).on('change', watch_logger);
+});
 
 gulp.task('default', function(callback) {
 	runSequence('clean:before', ['stylus', 'images'], 'jade', 'clean:after', callback);
+});
+
+gulp.task('build', function(callback) {
+	runSequence('production', 'clean:before', ['stylus', 'images'], 'jade', 'clean:after', callback);
 });

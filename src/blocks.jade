@@ -14,10 +14,12 @@ mixin category(title, value, addon)
 mixin image(title, path)
 	tr.image_desc
 		td: span= title
-	tr.image
-		td(colspan='3'): img(src=path, alt=title)
-	tr.image_alt
-		td(colspan='3') ## место для картинки ##
+	if !production
+		tr.image
+			td(colspan='3'): img(src=path, alt=title)
+	else
+		tr.image
+			td(colspan='3') ## место для картинки ##
 
 
 mixin spacer(numb)
