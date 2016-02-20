@@ -1,15 +1,18 @@
-- var up = function(val) { return '<sup>' + val + '</sup>'; }
+- var sup = function(val) { return '<sup>' + val + '</sup>'; }
+- var br = function(numb) { return Array.apply(null, Array(numb || 1)).map(function() { return '<br>' }).join(''); }
 
 mixin title(title, desc)
 	tr.title(class=attributes.style, class=attributes.bold)
 		td.head(colspan= !desc ? '3': '')= title
-		td.desc(colspan='2')= desc
+		if desc
+			td.desc(colspan='2')= desc
 
 mixin category(title, value, addon)
 	tr
 		td(class= title && 'category'): span= title && title + ':'
 		td.val(colspan= !addon ? '2': ''): span!= value
-		td.addon!= addon
+		if addon
+			td.addon!= addon
 
 mixin image(title, path)
 	tr.image_desc
