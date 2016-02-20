@@ -2,13 +2,13 @@
 
 mixin title(title, desc)
 	tr.title(class=attributes.style, class=attributes.bold)
-		td.head= title
+		td.head(colspan= !desc ? '3': '')= title
 		td.desc(colspan='2')= desc
 
 mixin category(title, value, addon)
 	tr
 		td(class= title && 'category')= title && title + ':'
-		td.val: span!= value
+		td.val(colspan= !addon ? '2': ''): span!= value
 		td.addon!= addon
 
 mixin image(title, path)

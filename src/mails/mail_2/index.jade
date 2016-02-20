@@ -1,0 +1,29 @@
+extends ../../layout.jade
+
+block styles
+	include styles.css
+
+block content
+	+title('Заголовок раздела очень длинный и красивый', 'Жирный заголовок')(style='h1', bold='desc')
+
+	+category('Метраж', '1800м' + up(2), 'я красивый')
+
+	+spacer()
+
+	+category('Метраж', '2100мм', 'до ферм')
+	+category(null, '340мм', 'до навесного потолка')
+	+category(null, '5100мм', 'я красивый')
+
+	+spacer()
+
+	+category('Высота застройки', '8400мм')
+
+	+title('Маленький заголовок подраздела')(style='h2', bold='head')
+
+	+category('Метраж 1', '1800м' + up(2), 'до потолка')
+	+category('Метраж 2', '5400мм', 'до ферм')
+	+category('Метраж 3 длинный', '3200м' + up(2), 'до пола')
+
+	+line()
+	+image('Я красивая картинка', 'img/01.jpg')
+	+image('Я еще картинка', 'img/02.jpg')
