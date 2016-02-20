@@ -68,20 +68,26 @@ table
 				font-weight bold
 	.spacer
 		height 20px
-	.category span
-		width 305px
-		display inline-block
-		vertical-align bottom
-		border-bottom 1px solid black
-	.val span
-		white-space nowrap
-		display inline-block
-		vertical-align bottom
-		border-bottom 1px solid black
-		font-weight bold
-	.addon
-		vertical-align bottom
-		padding-left 15px
+	.category
+		&.head td.head span
+			font-weight bold
+		&.val td.val span
+			font-weight bold
+		&.addon td.addon
+			font-weight bold
+		.head span
+			width 305px
+			display inline-block
+			vertical-align bottom
+			border-bottom 1px solid black
+		.val span
+			white-space nowrap
+			display inline-block
+			vertical-align bottom
+			border-bottom 1px solid black
+		.addon
+			vertical-align bottom
+			padding-left 15px
 
 
 .footer_block

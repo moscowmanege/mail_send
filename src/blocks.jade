@@ -12,8 +12,9 @@ mixin title(title, desc)
 
 
 mixin category(title, value, addon)
-	tr
-		td(class= title && 'category'): span= title && title + ':'
+	- var bold = attributes.bold || 'val'
+	tr.category(class=bold)
+		td(class= title && 'head'): span= title && title + ':'
 		td.val(colspan= !addon ? '2': ''): span!= value
 		if addon
 			td.addon!= addon
