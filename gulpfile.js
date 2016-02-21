@@ -77,7 +77,7 @@ gulp.task('production', function(callback) {
 
 
 gulp.task('dev', function() {
-	gulp.watch(['src/**/*.+(styl|jade|jpg|png)',], ['default']).on('change', watch_logger);
+	gulp.watch(['src/**/*.{styl,jade,jpg,png}'], ['default']).on('change', watch_logger);
 });
 
 gulp.task('default', function(callback) {
