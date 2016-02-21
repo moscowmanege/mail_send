@@ -50,7 +50,7 @@ gulp.task('jade', function() {
 	return gulp.src('src/mails/**/*.jade')
 		.pipe(plumber(error_logger))
 		.pipe(jade({pretty: !Production, locals: { production: Production }}))
-		.pipe(juice())
+		.pipe(juice({webResources: { images: false } }))
 		.pipe(gulp.dest('build'));
 });
 
@@ -77,7 +77,7 @@ gulp.task('production', function(callback) {
 
 
 gulp.task('dev', function() {
-	gulp.watch(['src/**', '!src', '!src/*.css'], ['default']).on('change', watch_logger);
+	gulp.watch(['src/**/*.+(styl|jade|jpg|png)',], ['default']).on('change', watch_logger);
 });
 
 gulp.task('default', function(callback) {
