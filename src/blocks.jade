@@ -6,9 +6,9 @@ mixin title(title, desc)
 	- var style = attributes.style || 'h1'
 	- var bold = attributes.bold || 'head'
 	tr.title(class=style, class=bold)
-		td.head(colspan= !desc ? '3': '')= title
+		td.head(colspan= !desc ? '3': '')!= title
 		if desc
-			td.desc(colspan='2')= desc
+			td.desc(colspan='2')!= desc
 
 
 mixin category(title, value, addon)
