@@ -1,8 +1,8 @@
-var del = require('del'),
-	 	colour = require('colour'),
+var rimraf = require('rimraf'),
 	 	runSequence = require('run-sequence');
 
 var gulp = require('gulp'),
+		util = require('gulp-util'),
 		juice = require('gulp-juice'),
 		jade = require('gulp-jade'),
 	 	plumber = require('gulp-plumber'),
@@ -19,21 +19,27 @@ var Production = false;
 
 
 var error_logger = function(error) {
-	console.log([
+	util.log([
 		'',
-		'---------- ERROR MESSAGE START ----------'.bold.red.inverse,
+		util.colors.bold.inverse.red('---------- ERROR MESSAGE START ----------'),
 		'',
-		(error.name.red + ' in ' + error.plugin.yellow),
+		(util.colors.red(err.name) + ' in ' + util.colors.yellow(err.plugin)),
 		'',
-		error.message,
-		'----------- ERROR MESSAGE END -----------'.bold.red.inverse,
+		err.message,
+		util.colors.bold.inverse.red('----------- ERROR MESSAGE END -----------'),
 		''
 	].join('\n'));
-}
+};
 
 var watch_logger = function(event) {
-	console.log('File ' + event.path.green + ' was ' + event.type.yellow + ', running tasks...');
-}
+	util.log([
+		'File ',
+		util.colors.green(event.path.replace(__dirname + '/', '')),
+		' was ',
+		util.colors.yellow(event.type),
+		', running tasks...'
+	].join(''));
+};
 
 
 // Tasks Block
@@ -60,11 +66,11 @@ gulp.task('images', function(){
 });
 
 gulp.task('clean:before', function(callback) {
-	return del('build', callback);
+	return rimraf('build', callback);
 });
 
 gulp.task('clean:after', function(callback) {
-	return del('src/**/*.css', callback);
+	return rimraf('src/**/*.css', callback);
 });
 
 gulp.task('production', function(callback) {
